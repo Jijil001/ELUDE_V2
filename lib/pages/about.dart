@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,18 +14,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.yellow,
-        colorScheme: ColorScheme.dark().copyWith(
+        colorScheme: const ColorScheme.dark().copyWith(
           primary: Colors.yellow,
         ),
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: AboutPage(),
+      home: const AboutPage(),
     );
   }
   
 }
 
 class AboutPage extends StatelessWidget {
+  const AboutPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +39,7 @@ class AboutPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
+      body: const Padding(
         padding: EdgeInsets.all(16.0),
         child: Center(
           child: Column(

@@ -10,7 +10,6 @@ class Publish extends StatefulWidget {
 
 class _PublishState extends State<Publish> {
   String content = '';
-  
 
   @override
   Widget build(BuildContext context) {
@@ -82,12 +81,18 @@ class _PublishState extends State<Publish> {
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.orange, // Set button background color to orange
+                  backgroundColor:
+                      Colors.orange, // Set button background color to orange
                 ),
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (BuildContext context){
-                        return SelectGenre();
-                      },),);   // Continue button logic
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const SelectGenre();
+                      },
+                    ),
+                  ); // Continue button logic
                   // Add your code here
                 },
                 child: const Text('Continue'),

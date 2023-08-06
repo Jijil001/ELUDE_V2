@@ -8,7 +8,7 @@ class Publish2 extends StatefulWidget {
 }
 
 class _Publish2State extends State<Publish2> {
-  List<int> _selectedChipIndexes = [];
+  final List<int> _selectedChipIndexes = [];
   late bool _isContent18Plus; // Variable to track if content is 18+
 
   final List<String> _genres = [
@@ -85,7 +85,7 @@ class _Publish2State extends State<Publish2> {
               ),
             ),
             const SizedBox(height: 16.0),
-            Text(
+            const Text(
               'Is your content 18+?',
               style: TextStyle(fontSize: 18.0),
             ),
@@ -99,10 +99,10 @@ class _Publish2State extends State<Publish2> {
                       _isContent18Plus = true;
                     });
                   },
-                  child: Text('Yes'),
                   style: ElevatedButton.styleFrom(
-                    primary: _isContent18Plus ? Colors.orange : null,
+                    backgroundColor: _isContent18Plus ? Colors.orange : null,
                   ),
+                  child: const Text('Yes'),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -110,10 +110,10 @@ class _Publish2State extends State<Publish2> {
                       _isContent18Plus = false;
                     });
                   },
-                  child: Text('No'),
                   style: ElevatedButton.styleFrom(
-                    primary: !_isContent18Plus ? Colors.orange : null,
+                    backgroundColor: !_isContent18Plus ? Colors.orange : null,
                   ),
+                  child: const Text('No'),
                 ),
               ],
             ),
@@ -121,10 +121,10 @@ class _Publish2State extends State<Publish2> {
               onPressed: () {
                 // Continue button action
               },
-              child: Text('Continue'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
+                backgroundColor: Colors.orange,
               ),
+              child: const Text('Continue'),
             ),
           ],
         ),

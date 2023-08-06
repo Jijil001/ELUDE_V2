@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
       ),
-      home: UserSelection(),
+      home: const UserSelection(),
     );
   }
 }
@@ -33,15 +35,15 @@ class _UserSelectionState extends State<UserSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Center(
         child: Padding(
-          padding: EdgeInsets.only(left: 16.0), // Adjust the padding value as needed
+          padding: const EdgeInsets.only(
+              left: 16.0), // Adjust the padding value as needed
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
-              Align(
+              const Spacer(),
+              const Align(
                 alignment: Alignment.center,
                 child: Text.rich(
                   TextSpan(
@@ -60,7 +62,7 @@ class _UserSelectionState extends State<UserSelection> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -79,8 +81,8 @@ class _UserSelectionState extends State<UserSelection> {
                           });
                         },
                       ),
-                      SizedBox(height: 5),
-                      Text(
+                      const SizedBox(height: 5),
+                      const Text(
                         'Reader',
                         style: TextStyle(
                           fontSize: 16,
@@ -89,7 +91,7 @@ class _UserSelectionState extends State<UserSelection> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 40),
+                  const SizedBox(width: 40),
                   Column(
                     children: [
                       IconButton(
@@ -105,8 +107,8 @@ class _UserSelectionState extends State<UserSelection> {
                           });
                         },
                       ),
-                      SizedBox(height: 5),
-                      Text(
+                      const SizedBox(height: 5),
+                      const Text(
                         'Writer',
                         style: TextStyle(
                           fontSize: 16,
@@ -117,9 +119,8 @@ class _UserSelectionState extends State<UserSelection> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
-                
                 onPressed: () {
                   if (isReaderSelected) {
                     // Reader selected
@@ -131,9 +132,9 @@ class _UserSelectionState extends State<UserSelection> {
                     // No option selected
                   }
                 },
-                child: Text('Continue'),
+                child: const Text('Continue'),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),
@@ -141,4 +142,3 @@ class _UserSelectionState extends State<UserSelection> {
     );
   }
 }
-

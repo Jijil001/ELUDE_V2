@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,17 +14,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.yellow,
-        colorScheme: ColorScheme.dark().copyWith(
+        colorScheme: const ColorScheme.dark().copyWith(
           primary: Colors.yellow,
         ),
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: SignupPage(),
+      home: const SignupPage(),
     );
   }
 }
 
 class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +35,7 @@ class SignupPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text.rich(
+            const Text.rich(
               TextSpan(
                 text: 'Sign',
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
@@ -47,17 +51,17 @@ class SignupPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => GenreSelectionPage(),
+                    builder: (context) => const GenreSelectionPage(),
                   ),
                 );
               },
-              child: Text('Select Genre'),
+              child: const Text('Select Genre'),
             ),
           ],
         ),
@@ -67,6 +71,8 @@ class SignupPage extends StatelessWidget {
 }
 
 class GenreSelectionPage extends StatefulWidget {
+  const GenreSelectionPage({super.key});
+
   @override
   _GenreSelectionPageState createState() => _GenreSelectionPageState();
 }
@@ -102,11 +108,11 @@ class _GenreSelectionPageState extends State<GenreSelectionPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Select Genre',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: DropdownButtonFormField<String>(
@@ -133,13 +139,13 @@ class _GenreSelectionPageState extends State<GenreSelectionPage> {
                 }).toList(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Do something with the selected genre
                 print('Selected Genre: $selectedGenre');
               },
-              child: Text('Confirm'),
+              child: const Text('Confirm'),
             ),
           ],
         ),

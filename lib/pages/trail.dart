@@ -4,7 +4,7 @@ import 'package:untitled1/pages/faq1.dart';
 import 'package:untitled1/pages/publish.dart';
 
 void main() {
-  runApp(Trail());
+  runApp(const Trail());
 }
 
 class Trail extends StatefulWidget {
@@ -26,14 +26,14 @@ class _TrailState extends State<Trail> {
       theme: isDarkMode ? ThemeData.dark() : ThemeData.light(),
       home: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80),
+          preferredSize: const Size.fromHeight(80),
           child: AppBar(
-            title: Text(
+            title: const Text(
               'Good Afternoon',
               style: TextStyle(color: Colors.orange),
             ),
             leading: PopupMenuButton<String>(
-              icon: Icon(Icons.menu),
+              icon: const Icon(Icons.menu),
               onSelected: (value) {
                 if (value == 'theme') {
                   setState(() {
@@ -61,7 +61,7 @@ class _TrailState extends State<Trail> {
                     ),
                     title: Text(
                       isDarkMode ? 'Dark Mode' : 'Light Mode',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ),
                 ),
@@ -78,25 +78,25 @@ class _TrailState extends State<Trail> {
                       isEyeProtectionEnabled
                           ? 'Eye Protection On'
                           : 'Eye Protection Off',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ),
                 ),
-                PopupMenuItem<String>(
+                const PopupMenuItem<String>(
                   value: 'about',
                   child: Text(
                     'About',
                     style: TextStyle(fontSize: 16),
                   ),
                 ),
-                PopupMenuItem<String>(
+                const PopupMenuItem<String>(
                   value: 'faq',
                   child: Text(
                     'FAQ',
                     style: TextStyle(fontSize: 16),
                   ),
                 ),
-                PopupMenuItem<String>(
+                const PopupMenuItem<String>(
                   value: 'publish',
                   child: Text(
                     'Publish New Work',
@@ -108,12 +108,12 @@ class _TrailState extends State<Trail> {
             actions: [
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 220, 128, 8),
+                  backgroundColor: const Color.fromARGB(255, 220, 128, 8),
                 ),
                 onPressed: () {
                   // Handle the action of the action button
                 },
-                child: Icon(Icons.add),
+                child: const Icon(Icons.add),
               ),
             ],
           ),
@@ -128,7 +128,7 @@ class _TrailState extends State<Trail> {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return PDFScreen(); // Replace PDFScreen with your actual PDF screen widget
+                    return const PDFScreen(); // Replace PDFScreen with your actual PDF screen widget
                   },
                 ),
               );
@@ -155,7 +155,7 @@ class BookCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: ListTile(
         title: Text(title),
         subtitle: Text(author),
@@ -166,14 +166,16 @@ class BookCard extends StatelessWidget {
 }
 
 class PDFScreen extends StatelessWidget {
+  const PDFScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Implement your PDF screen UI here
     return Scaffold(
       appBar: AppBar(
-        title: Text('PDF Viewer'),
+        title: const Text('PDF Viewer'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('hello'),
       ),
     );
@@ -185,7 +187,7 @@ void showAboutDialog(BuildContext context) {
     context,
     MaterialPageRoute(
       builder: (BuildContext context) {
-        return AboutPage();
+        return const AboutPage();
       },
     ),
   );
@@ -196,19 +198,22 @@ void showFAQDialog(BuildContext context) {
     context,
     MaterialPageRoute(
       builder: (BuildContext context) {
-        return FAQPage();
+        return const FAQPage();
       },
     ),
   );
 }
 
-
-
-
 void publishactivity(BuildContext context) {
- onPressed: () {
-                            Navigator.push(context,MaterialPageRoute(builder: (BuildContext context){
-                        return const Publish();
-                      },),);   // Add your login logic here
-              };
+  onPressed:
+  () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return const Publish();
+        },
+      ),
+    ); // Add your login logic here
+  };
 }

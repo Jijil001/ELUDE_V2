@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled1/pages/trail.dart';
 
-
 class loginPage extends StatefulWidget {
   const loginPage({Key? key});
 
@@ -18,7 +17,7 @@ class _loginPageState extends State<loginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text.rich(
+            const Text.rich(
               TextSpan(
                 text: 'Log',
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
@@ -34,41 +33,46 @@ class _loginPageState extends State<loginPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Email',
                   border: OutlineInputBorder(),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                            Navigator.push(context,MaterialPageRoute(builder: (BuildContext context){
-                        return Trail();
-                      },),);   // Add your login logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const Trail();
+                    },
+                  ),
+                ); // Add your login logic here
               },
-              child: Text('Continue'),
+              child: const Text('Continue'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextButton(
               onPressed: () {
- // Add forgot password logic here
+                // Add forgot password logic here
               },
-              child: Text('Forgot Password?'),
+              child: const Text('Forgot Password?'),
             ),
           ],
         ),

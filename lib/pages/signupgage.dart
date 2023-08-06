@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/pages/trail.dart';
 
 class signuppage extends StatefulWidget {
   const signuppage({Key? key});
@@ -18,7 +17,6 @@ class _signuppage extends State<signuppage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text.rich(
-              
               TextSpan(
                 text: 'Sign',
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
@@ -34,21 +32,17 @@ class _signuppage extends State<signuppage> {
                 ],
               ),
             ),
-            
-             SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Name',
                   border: OutlineInputBorder(),
                 ),
               ),
             ),
-            
-            
-            
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextFormField(
@@ -73,9 +67,8 @@ class _signuppage extends State<signuppage> {
               onPressed: () {
                 // Add your login logic here
               },
-              child: Text('Create Account'),
+              child: const Text('Create Account'),
             ),
-            
           ],
         ),
       ),

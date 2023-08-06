@@ -8,12 +8,12 @@ class ReadingWindow extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context); // Navigate back to the previous screen
           },
         ),
-        title: Text('Back'), // Display "Back" near the back button
+        title: const Text('Back'), // Display "Back" near the back button
       ),
       body: Column(
         children: [
@@ -24,7 +24,7 @@ class ReadingWindow extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: TextField(
                     style: TextStyle(color: Colors.orange), // Set font color to orange
                     decoration: InputDecoration(
@@ -33,15 +33,15 @@ class ReadingWindow extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 8.0),
+                const SizedBox(width: 8.0),
                 ElevatedButton(
                   onPressed: () {
                     // TODO: Implement submit button functionality
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.orange, // Set button background color to orange
+                    backgroundColor: Colors.orange, // Set button background color to orange
                   ),
-                  child: Text('Submit', style: TextStyle(color: Colors.white)), // Set button text color to white
+                  child: const Text('Submit', style: TextStyle(color: Colors.white)), // Set button text color to white
                 ),
               ],
             ),

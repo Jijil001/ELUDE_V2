@@ -9,7 +9,7 @@ class SelectGenre extends StatefulWidget {
 
 class _SelectGenreState extends State<SelectGenre> {
   
-  List<int> _selectedChipIndexes = [];
+  final List<int> _selectedChipIndexes = [];
 
   final List<String> _genres = [
     'Thriller',
@@ -82,10 +82,10 @@ class _SelectGenreState extends State<SelectGenre> {
               onPressed: () {
                 // Continue button action
               },
-              child: Text('Continue'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
+                backgroundColor: Colors.orange,
               ),
+              child: const Text('Continue'),
             ),
           ],
         ),

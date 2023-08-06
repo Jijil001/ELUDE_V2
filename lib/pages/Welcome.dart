@@ -1,11 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:untitled1/pages/login.dart';
 import 'package:untitled1/pages/signupgage.dart';
 
 class Welcome extends StatefulWidget {
-  const Welcome({Key? key});
+  // const Welcome({super.key, Key? key});
 
   @override
   State<Welcome> createState() => _WelcomeState();
@@ -20,7 +18,7 @@ class _WelcomeState extends State<Welcome> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Expanded(
+          const Expanded(
             child: Align(
               alignment: Alignment.center,
               child: Text.rich(
@@ -41,44 +39,62 @@ class _WelcomeState extends State<Welcome> {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: double.infinity, // Expand the buttons to full width
             child: Column(
               children: [
                 Container(
                   width: double.infinity, // Expand the button to full width
                   height: 60, // Set the height of the button
-                  margin: const EdgeInsets.all(10), // Add margin around the button
+                  margin:
+                      const EdgeInsets.all(10), // Add margin around the button
                   child: ElevatedButton(
                     onPressed: () {
                       // Get Started button logic
-                     Navigator.push(context,MaterialPageRoute(builder: (BuildContext context){
-                        return signuppage();
-                      },),); // Add your code here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return const signuppage();
+                          },
+                        ),
+                      ); // Add your code here
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.orange, // Set button background color to orange
+                      backgroundColor: Colors
+                          .orange, // Set button background color to orange
                     ),
-                    child: Text('Get Started', style: TextStyle(fontSize: 18)),
+                    child: const Text('Get Started',
+                        style: TextStyle(fontSize: 18)),
                   ),
                 ),
                 Container(
                   width: double.infinity, // Expand the button to full width
                   height: 60, // Set the height of the button
-                  margin: const EdgeInsets.all(10), // Add margin around the button
+                  margin:
+                      const EdgeInsets.all(10), // Add margin around the button
                   child: ElevatedButton(
                     onPressed: () {
                       // Already have an account button logic
                       // Add your code here
-                      Navigator.push(context,MaterialPageRoute(builder: (BuildContext context){
-                        return loginPage();
-                      },),);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return const loginPage();
+                          },
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.transparent, // Set button background color to transparent
-                      side: BorderSide(color: Colors.orange), // Set button border color to orange
+                      backgroundColor: Colors
+                          .transparent, // Set button background color to transparent
+                      side: const BorderSide(
+                          color: Colors
+                              .orange), // Set button border color to orange
                     ),
-                    child: Text('Already have an account', style: TextStyle(fontSize: 18, color: Colors.orange)),
+                    child: const Text('Already have an account',
+                        style: TextStyle(fontSize: 18, color: Colors.orange)),
                   ),
                 ),
               ],

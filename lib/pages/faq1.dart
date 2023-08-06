@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/pages/trail.dart';
 
 class FAQPage extends StatelessWidget {
+  const FAQPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FAQ'),
+        title: const Text('FAQ'),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,7 +44,7 @@ class FAQItem extends StatefulWidget {
   final String question;
   final String answer;
 
-  FAQItem({required this.question, required this.answer});
+  const FAQItem({super.key, required this.question, required this.answer});
 
   @override
   State<FAQItem> createState() => _FAQItemState();
@@ -58,7 +59,7 @@ class _FAQItemState extends State<FAQItem> {
       child: ExpansionTile(
         title: Text(
           widget.question,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         collapsedTextColor: Colors.black,
         textColor: Colors.black,
@@ -71,7 +72,7 @@ class _FAQItemState extends State<FAQItem> {
         },
         children: [
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Text(widget.answer),
           ),
         ],
